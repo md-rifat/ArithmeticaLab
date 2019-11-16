@@ -1,0 +1,88 @@
+
+
+public class TestFunctions 
+{ 
+   public static void main(String[] args) 
+   { 
+        
+       double input,result; 
+       input=5; 
+       System.out.printf("The square of %.2f is %.2f\n", 
+               input,square(input)); 
+       input=10; 
+       System.out.printf("The square of %.2f is %.2f\n", 
+               input,square(input)); 
+       
+       input=5; 
+       result=quadruple(input); 
+       System.out.printf("The quadruple of %.2f is %.2f\n", 
+               input,quadruple(input)); 
+       input=10; 
+       result=quadruple(input); 
+       System.out.printf("The quadruple of %.2f is %.2f\n", 
+               input,quadruple(input)); 
+       
+       int value=10; 
+       int divideBy=4; 
+       System.out.println("Calling divisionWithR(10,4) method "); 
+       System.out.println(divisionWithR(value,divideBy)); 
+       
+       value=10; 
+       divideBy=3; 
+       System.out.println("Calling divisionWithR(10,2) method "); 
+       System.out.println(divisionWithR(value,divideBy)); 
+       
+       double centimeters=254; 
+       System.out.println(centimeters+" cms ="+centimetersToFeetAndInches(centimeters)); 
+       
+       centimeters=250; 
+       System.out.println(centimeters+" cms ="+centimetersToFeetAndInches(centimeters)); 
+
+   } 
+   
+   /*Method that takes centimeters and converts the centimeters 
+   * to feets and inches as string value*/ 
+   
+   public static String centimetersToFeetAndInches(double centimeters) 
+   { 
+       
+       int numFeets = ((int) Math.round(centimeters / 2.54)) / 12; 
+       int numInches = ((int) Math.round((centimeters / 2.54)) - (numFeets * 12));   
+       String result=numFeets+"ft "+numInches+"in"; 
+       return result; 
+   } 
+   
+   /*The method , divisionWithR that takes two integer values and then 
+   * find the quotient and remainder value as string output*/ 
+   
+   public static String divisionWithR(int value, int divideBy) 
+   { 
+       int quotient; 
+       int remainder; 
+       String result=""; 
+       quotient=value/divideBy; 
+       remainder=value%divideBy; 
+       result=quotient+" R"+remainder; 
+       return result; 
+   } 
+   
+   /*The method , quadruple that takes a double input as input argument 
+   * and then mutliply the input by 4 and returns the result value*/ 
+   
+   public static double quadruple(double input) 
+   { 
+       double result=0; 
+       result=input*4.0;       
+       return result; 
+   } 
+   
+/*The method , square that takes a double input as input argument 
+   * and then square the the input and returns the result value*/ 
+   
+   public static double square(double input) 
+   { 
+       double result=0; 
+       result=input*input;       
+       return result; 
+   } 
+} 
